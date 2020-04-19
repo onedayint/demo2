@@ -1,10 +1,8 @@
-import { RESPONSE, SUCCESS } from './action-types'
-export  function fetchData(state="init", action) {
+import { actions } from './action-types'
+export  function fetchData(state=[], action) {
     switch(action.type){
-        case RESPONSE:
-            if (action.data.status === SUCCESS){
-                return action.data.data.total_count
-            }
+        case actions.SUCCESS:
+            return action.data.items
         default:
         return state
     }
